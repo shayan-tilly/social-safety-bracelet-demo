@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="A team-demo prototype for a discreet nightlife safety bracelet that can flag possible medical distress and connect trusted friends." />
-  <title>Joy &amp; Whimsy — Social safety, beautifully connected</title>
+  <meta name="description" content="A team demo prototype for a discreet nightlife safety bracelet that can flag possible medical distress and connect trusted friends." />
+  <title>Joy &amp; Whimsy  Social safety, beautifully connected</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
@@ -32,7 +32,7 @@
     <div class="hero-copy">
       <div class="eyebrow">Community-led harm reduction</div>
       <h1>Safety that feels like <span class="gradient-word">belonging.</span></h1>
-      <p>A discreet Italian charm bracelet and companion experience that helps trusted friends notice possible medical distress earlier—without turning a night out into surveillance.</p>
+      <p>A discreet Italian charm bracelet and companion experience that helps trusted friends notice possible medical distress earlier without turning a night out into surveillance.</p>
       <div class="actions"><button class="primary" onclick="document.querySelector('#experience').scrollIntoView()">Experience the prototype</button><button class="secondary" onclick="document.querySelector('#market').scrollIntoView()">Meet the community</button></div>
       <div class="micro"><span class="dot"></span>Interactive concept prototype · Team demonstration</div>
     </div>
@@ -76,7 +76,7 @@
   function runScenario(){const btn=document.getElementById('scenarioButton');btn.disabled=true;btn.textContent='Reading multiple signals…';setStage(2);showToast('Sustained concerning pattern simulated');setTimeout(()=>{setStage(3);openAlert('sensor');btn.textContent='Medical-distress scenario running';},1250)}
   function openAlert(type){const title=document.getElementById('alertTitle'),text=document.getElementById('alertText');if(type==='manual'){title.textContent='Help is one tap away';text.textContent='Choose a trusted friend to notify. People nearby will not see or hear an alert.'}else{title.textContent='Possible medical distress';text.textContent='A sustained pattern across breathing, oxygen trend, motion, and responsiveness was simulated. This is not an overdose diagnosis.'}document.getElementById('alert').classList.add('show');}
   function resolveSafe(){showToast('Check-in complete — your privacy is preserved');resetDemo();}
-  function notifyFriend(){setStage(4);document.getElementById('alertTitle').textContent='Kevin has been notified';document.getElementById('alertText').textContent='Possible medical distress: check on Maya. Your selected friend received the last known location and an emergency-action prompt.';showToast('Possible-distress alert sent to trusted friend');}
+  function notifyFriend(){setStage(4);document.getElementById('alertTitle').textContent='Taylor has been notified';document.getElementById('alertText').textContent='Possible medical distress: check on Maya. Your selected friend received the last known location and an emergency-action prompt.';showToast('Possible-distress alert sent to trusted friend');}
   function resetDemo(){document.getElementById('alert').classList.remove('show');document.getElementById('scenarioButton').disabled=false;document.getElementById('scenarioButton').textContent='Simulate medical distress';setStage(1)}
   function showToast(message){const t=document.getElementById('toast');t.textContent=message;t.classList.add('show');clearTimeout(timer);timer=setTimeout(()=>t.classList.remove('show'),2600)}
 </script>
