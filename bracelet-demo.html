@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="A static standalone bracelet concept demo for Joy & Whimsy." />
+  <title>Joy &amp; Whimsy — Standalone Bracelet Demo</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root{--ink:#10182b;--muted:#697083;--cream:#fbf8f2;--paper:#fffdfa;--purple:#7656ff;--pink:#ed5ca4;--gold:#d5a942;--line:rgba(16,24,43,.11);--green:#168866}
+    *{box-sizing:border-box}body{margin:0;background:var(--cream);color:var(--ink);font-family:"DM Sans",sans-serif}.shell{width:min(1160px,calc(100% - 40px));margin:auto}nav{height:76px;display:flex;align-items:center;justify-content:space-between}.brand{font:800 1.08rem Manrope;display:flex;align-items:center;gap:10px}.mark{width:31px;height:31px;border:2px solid var(--ink);border-radius:50%;position:relative}.mark:after{content:"";position:absolute;width:8px;height:8px;background:linear-gradient(135deg,var(--pink),var(--purple));border-radius:50%;inset:0;margin:auto}.back{color:var(--ink);text-decoration:none;border:1px solid var(--line);padding:11px 16px;border-radius:999px;font-weight:700;background:rgba(255,255,255,.65)}
+    header{padding:68px 0 70px;text-align:center}.eyebrow{font-size:.76rem;font-weight:800;letter-spacing:.13em;text-transform:uppercase;color:var(--purple)}h1{font:800 clamp(3rem,7vw,6rem)/.97 Manrope;letter-spacing:-.065em;margin:16px auto 24px;max-width:920px}.gradient{background:linear-gradient(105deg,var(--purple),var(--pink));-webkit-background-clip:text;color:transparent}.lead{font-size:1.15rem;line-height:1.7;color:#4e5769;max-width:710px;margin:auto}.mode{display:inline-flex;gap:9px;align-items:center;margin-top:25px;background:#e9f7f1;color:#16654f;padding:9px 14px;border-radius:999px;font-size:.82rem;font-weight:800}.mode i{width:7px;height:7px;background:var(--green);border-radius:50%}
+    .demo{display:grid;grid-template-columns:1.05fr .95fr;gap:56px;align-items:center;padding:25px 0 100px}.stage{min-height:600px;border-radius:40px;background:radial-gradient(circle at 30% 22%,rgba(237,92,164,.22),transparent 26%),radial-gradient(circle at 75% 70%,rgba(118,86,255,.28),transparent 34%),#f0edf8;display:grid;place-items:center;position:relative;overflow:hidden;border:1px solid rgba(118,86,255,.1)}.bracelet{width:365px;height:365px;border:40px solid #dcb04d;border-left-color:#bd8427;border-right-color:#f0ce78;border-radius:50%;position:relative;filter:drop-shadow(0 34px 32px rgba(91,55,18,.28));transform:rotate(-13deg)}.bracelet:after{content:"";position:absolute;inset:-32px;border:1px solid rgba(255,255,255,.9);border-radius:50%}.charm{position:absolute;width:77px;height:58px;border-radius:14px;background:linear-gradient(145deg,#f8dc85,#af761e);border:2px solid #fbe8a9;box-shadow:inset 0 -8px 15px rgba(73,40,6,.19),0 9px 18px rgba(83,50,13,.18);display:grid;place-items:center;font-size:1.5rem}.c1{left:-42px;top:45px;transform:rotate(-26deg)}.c2{right:-42px;top:70px;transform:rotate(25deg)}.c3{left:-42px;bottom:55px;transform:rotate(24deg)}.c4{right:-35px;bottom:45px;transform:rotate(-24deg)}.guardian{position:absolute;width:96px;height:96px;border-radius:25px;left:94px;top:-63px;background:linear-gradient(145deg,#322663,#121322);border:5px solid #f2cf70;color:white;display:grid;place-items:center;text-align:center;font-size:.65rem;font-weight:800;letter-spacing:.1em;box-shadow:0 0 0 7px rgba(242,207,112,.32),0 0 42px rgba(118,86,255,.5)}.guardian span{display:block;font-size:1.2rem;letter-spacing:0;margin-bottom:2px}.callout{position:absolute;background:rgba(255,255,255,.86);border:1px solid rgba(255,255,255,.9);border-radius:18px;padding:13px 16px;box-shadow:0 18px 45px rgba(44,35,82,.13);font-size:.78rem;color:var(--muted)}.callout strong{display:block;color:var(--ink);font-size:.93rem;margin-top:3px}.a{top:55px;right:38px}.b{left:35px;bottom:65px}.c{right:36px;bottom:82px}
+    .details h2{font:800 clamp(2.2rem,4vw,3.7rem)/1.02 Manrope;letter-spacing:-.05em;margin:12px 0 20px}.details>p{color:var(--muted);line-height:1.7}.phone-off{display:flex;gap:12px;align-items:center;background:#191b26;color:white;padding:16px 18px;border-radius:18px;margin:24px 0}.phone-icon{font-size:1.5rem}.phone-off small{display:block;color:#aeb4c4;margin-top:2px}.flow{margin-top:27px}.step{display:grid;grid-template-columns:43px 1fr;gap:14px;padding:17px 0;border-bottom:1px solid var(--line)}.number{width:38px;height:38px;border-radius:12px;background:#eeeaff;color:var(--purple);font-weight:800;display:grid;place-items:center}.step h3{font:800 1rem Manrope;margin:0 0 5px}.step p{color:var(--muted);line-height:1.5;font-size:.88rem;margin:0}.specs{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;padding:0 0 100px}.spec{padding:23px;border:1px solid var(--line);border-radius:22px;background:var(--paper)}.spec span{font-size:1.4rem}.spec h3{font:800 1rem Manrope;margin:13px 0 7px}.spec p{font-size:.83rem;line-height:1.5;color:var(--muted);margin:0}.note{margin-bottom:70px;padding:25px 28px;border-radius:22px;background:#fff1c1;border:1px solid #ead17b;color:#5d512a;line-height:1.6}.note strong{color:#372f17}footer{border-top:1px solid var(--line);padding:35px 0 50px;color:var(--muted);font-size:.84rem}
+    @media(max-width:850px){.demo{grid-template-columns:1fr}.stage{min-height:530px}.specs{grid-template-columns:1fr 1fr}.details{text-align:left}}@media(max-width:500px){.shell{width:min(100% - 24px,1160px)}header{padding-top:45px}.stage{min-height:455px}.bracelet{width:255px;height:255px;border-width:30px}.guardian{width:76px;height:76px;left:60px;top:-52px}.charm{width:60px;height:48px}.a{right:12px;top:20px}.b{left:12px;bottom:28px}.c{display:none}.specs{grid-template-columns:1fr}.back{font-size:.8rem}.brand{font-size:.9rem}}
+  </style>
+</head>
+<body>
+  <nav class="shell"><div class="brand"><span class="mark"></span>Joy &amp; Whimsy</div><a class="back" href="index.html">← Main experience</a></nav>
+  <header class="shell"><div class="eyebrow">Standalone bracelet concept</div><h1>Help can travel from the <span class="gradient">bracelet alone.</span></h1><p class="lead">This separate demo shows the intended standalone mode: Maya can triple-press the bracelet to alert Taylor and share a location even when Maya’s phone is dead or unavailable.</p><div class="mode"><i></i>Static team-demo visualization</div></header>
+  <main class="shell">
+    <section class="demo">
+      <div class="stage" aria-label="Static concept rendering of the standalone Joy and Whimsy safety bracelet">
+        <div class="bracelet"><div class="charm c1">♥</div><div class="charm c2">✦</div><div class="charm c3">☻</div><div class="charm c4">★</div><div class="guardian"><div><span>•••</span>GUARDIAN</div></div></div>
+        <div class="callout a">Independent connection<strong>LTE-M + eSIM</strong></div>
+        <div class="callout b">Three quick presses<strong>Silent SOS</strong></div>
+        <div class="callout c">Private confirmation<strong>Haptic pulse</strong></div>
+      </div>
+      <div class="details">
+        <div class="eyebrow">Phone unavailable scenario</div><h2>The Guardian Charm handles the alert.</h2><p>The central charm contains the proposed safety hardware. It uses the phone when available to conserve battery, but the intended standalone version has its own connection for essential alerts.</p>
+        <div class="phone-off"><div class="phone-icon">▱</div><div><strong>Maya’s phone is unavailable</strong><small>Battery depleted · Bracelet remains active</small></div></div>
+        <div class="flow">
+          <div class="step"><div class="number">1</div><div><h3>Maya triple-presses the Guardian Charm</h3><p>The gesture is discreet and does not require a screen, voice command, light, or audible alarm.</p></div></div>
+          <div class="step"><div class="number">2</div><div><h3>The bracelet confirms with a private vibration</h3><p>A haptic pulse tells Maya that the distress request was received.</p></div></div>
+          <div class="step"><div class="number">3</div><div><h3>The bracelet sends an encrypted alert</h3><p>Its proposed eSIM and LTE-M connection transmit the SOS and GPS or last-known location.</p></div></div>
+          <div class="step"><div class="number">4</div><div><h3>Taylor receives the trusted-friend alert</h3><p>The alert identifies Maya, provides location context, and offers call, navigation, and emergency-action options.</p></div></div>
+        </div>
+      </div>
+    </section>
+    <section class="specs">
+      <article class="spec"><span>•••</span><h3>Triple-press input</h3><p>A deliberate physical gesture designed to reduce accidental activation.</p></article>
+      <article class="spec"><span>⌖</span><h3>GPS/GNSS location</h3><p>Shares current or last-known location only during an alert or approved session.</p></article>
+      <article class="spec"><span>▥</span><h3>LTE-M with eSIM</h3><p>Proposed independent connectivity when the paired phone cannot relay the alert.</p></article>
+      <article class="spec"><span>≈</span><h3>Haptic confirmation</h3><p>Quietly confirms activation without exposing the wearer’s request to people nearby.</p></article>
+    </section>
+    <aside class="note"><strong>Prototype boundary:</strong> This page visualizes the intended standalone architecture. The current web prototype does not contain a physical cellular modem, GPS radio, medical sensors, or an activated eSIM. Real-world performance would require hardware engineering, carrier support, battery and antenna testing, privacy safeguards, and safety validation.</aside>
+  </main>
+  <footer><div class="shell">Joy &amp; Whimsy · Standalone bracelet concept · Team J&amp;W · 2026</div></footer>
+</body>
+</html>
